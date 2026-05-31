@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スコア集計・分析レポート</title>
+  <style>
+    body {
+      font-family: "Meiryo", "Hiragino Sans", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    header p  { margin: 0.5rem 0 0; opacity: 0.7; font-size: 0.9rem; }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      margin-top: 0;
+      border-left: 4px solid #2980b9;
+      padding-left: 0.7rem;
+      font-size: 1.2rem;
+    }
+
+    img.graph {
+      width: 100%;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: #f0f4f8;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .card .value {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .card .label {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    th {
+      background: #2c3e50;
+      color: white;
+      padding: 0.6rem 1rem;
+      text-align: left;
+    }
+    td {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    tr:hover td { background: #f9f9f9; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>スコア集計・分析レポート</h1>
+  <p>課題2・課題3 データ集計結果</p>
+</header>
+
+<main>
+
+  <!-- 課題2 -->
+  <section>
+    <h2>課題2 ── 個人スコア分析</h2>
+
+    <div class="summary-grid">
+      <div class="card">
+        <h3>最優秀者</h3>
+        <div class="value">高橋花子</div>
+        <div class="label">平均 92.0 点</div>
+      </div>
+      <div class="card">
+        <h3>得意科目（全員平均）</h3>
+        <div class="value">英語</div>
+        <div class="label">平均 86.7 点</div>
+      </div>
+      <div class="card">
+        <h3>参加者数</h3>
+        <div class="value">5 名</div>
+        <div class="label">各8科目受験</div>
+      </div>
+      <div class="card">
+        <h3>最大点差</h3>
+        <div class="value">18.9 点</div>
+        <div class="label">高橋花子 vs 佐藤次郎</div>
+      </div>
+    </div>
+
+    <img class="graph" src="課題2_分析グラフ.png" alt="課題2 分析グラフ">
+
+    <table>
+      <thead>
+        <tr><th>順位</th><th>名前</th><th>平均点</th><th>最高点</th><th>最低点</th><th>受験科目数</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>高橋花子</td><td>92.0</td><td>96</td><td>88</td><td>8</td></tr>
+        <tr><td>2</td><td>鈴木花子</td><td>88.6</td><td>94</td><td>80</td><td>8</td></tr>
+        <tr><td>3</td><td>田中一郎</td><td>87.5</td><td>92</td><td>83</td><td>8</td></tr>
+        <tr><td>4</td><td>山田太郎</td><td>83.6</td><td>91</td><td>75</td><td>8</td></tr>
+        <tr><td>5</td><td>佐藤次郎</td><td>73.1</td><td>80</td><td>65</td><td>8</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 課題3 -->
+  <section>
+    <h2>課題3 ── 部署別スコア分析</h2>
+
+    <div class="summary-grid">
+      <div class="card">
+        <h3>トップ部署</h3>
+        <div class="value">開発部</div>
+        <div class="label">平均 88.9 点（10名）</div>
+      </div>
+      <div class="card">
+        <h3>全体最高スコア</h3>
+        <div class="value">95 点</div>
+        <div class="label">伊藤（管理）</div>
+      </div>
+      <div class="card">
+        <h3>参加者数</h3>
+        <div class="value">35 名</div>
+        <div class="label">4部署</div>
+      </div>
+      <div class="card">
+        <h3>全体平均</h3>
+        <div class="value">84.9 点</div>
+        <div class="label">平均以上 57.1%（20名）</div>
+      </div>
+    </div>
+
+    <img class="graph" src="課題3_分析グラフ.png" alt="課題3 分析グラフ">
+
+    <table>
+      <thead>
+        <tr><th>順位</th><th>部署</th><th>平均点</th><th>最高点</th><th>最低点</th><th>人数</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>開発</td><td>88.9</td><td>94</td><td>82</td><td>10</td></tr>
+        <tr><td>2</td><td>管理</td><td>87.1</td><td>95</td><td>76</td><td>8</td></tr>
+        <tr><td>3</td><td>営業</td><td>83.0</td><td>93</td><td>70</td><td>10</td></tr>
+        <tr><td>4</td><td>人事</td><td>79.3</td><td>82</td><td>75</td><td>7</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  スコア集計レポート ― analyze_scores
+</footer>
+
+</body>
+</html>
